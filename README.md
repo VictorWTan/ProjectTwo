@@ -4,7 +4,7 @@ My project is a replica of a site called DataForProgress. The website is a progr
 
 ![DataForProgress](assets/ReadMe/DFPChart.png)
 
-<h1><strong>Planning</strong><h1>
+<h1><strong>Planning</strong></h1>
 
 For the project, I plan to establish an index page with a list of individual issues and clicking on each link will go to show routes for each issue which will be populated using chart.js. Data from the chart will be referenced using an api. There will be a blog below that does short summaries for each issue referenced and relevance. Below that there will be a comment section. In order to access the site, the user must create a login and password to enter to be able to comment. Not sure if I want to give the user access to the site. I might create an application to apply for admin privileges if the user is an approved journalist and want to add their own blogs and issues.
 
