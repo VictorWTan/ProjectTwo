@@ -14,7 +14,13 @@ For the project, I plan to establish an index page with a list of individual iss
 
 Minimum viable product will consist of a website with an index page, show pages, login, comments, editing comments, and deleting comments. Stretch goal is including admin privileges or journalist privileges. 
 
+<h1><strong>ERD</strong></h1>
+
 ![ERD](assets/ReadMe/ERD.jpeg)
+
+<h1><strong>Wireframe</strong></h1>
+
+![Wireframe](assets/ReadMe/Wireframe.png)
 
 <h1><strong>Resources Used</strong></h1>
 
