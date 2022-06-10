@@ -10,4 +10,10 @@ For the project, I plan to establish an index page with a list of individual iss
 
 ![Charts](assets/ReadMe/Issues.png)
 
+<h1><strong>MVP</strong></h1>
+
 Minimum viable product will consist of a website with an index page, show pages, login, comments, editing comments, and deleting comments. Stretch goal is including admin privileges or journalist privileges. 
+
+<h1><strong>Resources Used</strong></h1>
+
+The public API which I will be using is sourced from opensecrets.org. It's a website run by an independent, non-profit, and non-partisan research group which provides public information on the flow of money in American politics.
