@@ -21,5 +21,9 @@ app.use(session({
 app.use('/issues', IssueRouter)
 app.use('/user', UserRouter)
 
+app.get('/', (req, res) => {
+  res.render('index')
+})
+
 const PORT = process.env.PORT
 app.listen(PORT, () => console.log(`Now Listening on port: ${PORT}`))
