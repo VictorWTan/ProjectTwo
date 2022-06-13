@@ -9,3 +9,17 @@ router.use((req, res, next) => {
         res.redirect("/user/login")
     }
 })
+
+// GET Index page
+
+// Show page for each issue/article
+
+// Post article into issues index
+
+// GET new article page
+
+// Edit page for those with admin privleges. Otherwise show 403 error
+
+// Update takes info and updates it to issues show page
+
+// Delete route to delete article 
