@@ -14,7 +14,7 @@ router.use((req, res, next) => {
 
 router.get('/', (req, res) => {
     // Find all issues
-    Issue.find({ username: req.session.user })
+    Issue.find({})
     // Render index page when they're found
     .then((issue) => {
         console.log(issue)
@@ -44,6 +44,14 @@ router.get('/:id', (req, res) => {
 })
 
 // Post article into issues index
+
+router.post('/', (req, res) => {
+    req.body.username = req.session.username
+    Issue.create(req.body)
+    .then((issues) => {
+        res.redirect('/issues')
+    })
+})
 
 // GET new article page for those with admin privileges
 

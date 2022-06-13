@@ -2,6 +2,7 @@
 const User = require('../models/user')
 const Issue = require('../models/issue')
 const express = require('express')
+const router = Express.router()
 
 
 // No get needed as it's embedded
