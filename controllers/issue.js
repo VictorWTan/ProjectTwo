@@ -103,3 +103,5 @@ router.delete('/:id', (req, res) => {
         res.json({error})
     })
 })
+
+module.exports = router

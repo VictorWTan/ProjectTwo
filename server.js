@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 const MongoStore = require('connect-mongo')
 const IssueRouter = require('./controllers/issue')
 const UserRouter = require('./controllers/user')
+const session = require('express-session')
 
 app.use(express.urlencoded({extended: true}))
 app.use(express.static('public'))

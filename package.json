@@ -4,7 +4,8 @@
   "description": "My project is a replica of a site called DataForProgress. The website is a progressive run blog site that displays data to support progressive causes. They create charts using data from their api provider or polling regarding any political or social issue to back progressive movements.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
