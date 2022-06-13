@@ -1,6 +1,8 @@
 const express = require('express')
 const Issue = require('../models/issue')
 const router = express.Router()
+const NewsAPI = require('newsapi')
+const newsapi = new NewsAPI('1372cfdb6df94089bdb9ceb7f8b5ae9c')
 
 router.use((req, res, next) => {
     if (req.session.loggedIn) {
