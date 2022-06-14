@@ -9,7 +9,7 @@ const issuesSchema = new Schema({
     content:{type: String},
     author: {type: String},
     urlToImage: {type: String},
-    issue: String
+    issue: {type: String, index: true}
 })
 
 const Issue = model('Issue', issuesSchema)
