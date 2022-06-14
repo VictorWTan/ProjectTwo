@@ -27,18 +27,13 @@ app.use('/user', UserRouter)
 app.get('/', (req, res) => {
   Issue.find({})
   .then((data) => {
-    res.render('issues/index.liquid')
+    res.render('index.liquid')
   })
   .catch((error) => {
     console.log(error)
     res.json({error})
   })
   
-})
-
-app.get('/:issueId', async (req, res) => {
-  const issueId = await Issue.find({'issue': `${req.params.issueId}`})
-  res.render('issues/show.liquid', {issueId})
 })
 
 
