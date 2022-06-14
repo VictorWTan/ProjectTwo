@@ -14,11 +14,12 @@ const addBabyFormula = () => {
     .then(res => {
     let babyFormulaArticles = res.articles
     let taggedFormulaArticles = babyFormulaArticles.map((article) => {
-        article.issues = 'Children and Family'
+        article.issue = 'Children and Family'
+        return article
     })
     Issue.deleteMany({}).then((data) => {
         // Seed Starter Fruits
-        Issue.create(taggedFormulaArticles).then((data) => {
+        Issue.insertMany(taggedFormulaArticles).then((data) => {
                 console.log(data)
             })
         })
@@ -37,6 +38,7 @@ const addClimate = () => {
         let climateChangeArticles = res.articles
         let taggedClimateArticles = climateChangeArticles.map((article) => {
             article.issue = 'Climate Change'
+            return article
         })
         Issue.insertMany(taggedClimateArticles).then((data) => {
             console.log(data)
