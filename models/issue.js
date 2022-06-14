@@ -5,9 +5,10 @@ const {Schema, model} = mongoose
 const issuesSchema = new Schema({
     title: {type: String, required: true},
     comments: {type: Schema.Types.ObjectId, ref: 'Comment'},
-    createdOn: {type: Date, default: Date.now},
-    updatedOn: {type: Date, default: Date.now},
-    creator: {type: Schema.Types.ObjectId, ref: 'User'}
+    publishedAt: {type: Date, default: Date.now},
+    content:{type: String},
+    author: {type: String},
+    urlToImage: {type: String}
 })
 
 const Issue = model('Issue', issuesSchema)
