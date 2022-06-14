@@ -8,6 +8,7 @@ const IssueRouter = require('./controllers/issue')
 const UserRouter = require('./controllers/user')
 const session = require('express-session')
 const NewsAPI = require('newsapi')
+const Issue = require('./models/issue')
 const newsapi = new NewsAPI('1372cfdb6df94089bdb9ceb7f8b5ae9c')
 
 app.use(express.urlencoded({extended: true}))
@@ -24,7 +25,20 @@ app.use('/issues', IssueRouter)
 app.use('/user', UserRouter)
 
 app.get('/', (req, res) => {
-  res.render('index')
+  Issue.find({})
+  .then((data) => {
+    res.render('issues/index.liquid')
+  })
+  .catch((error) => {
+    console.log(error)
+    res.json({error})
+  })
+  
+})
+
+app.get('/:issueId', async (req, res) => {
+  const issueId = await Issue.find({'issue': `${req.params.issueId}`})
+  res.render('issues/show.liquid', {issueId})
 })
 
 
