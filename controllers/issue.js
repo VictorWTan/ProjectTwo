@@ -19,8 +19,7 @@ router.get('/', (req, res) => {
     Issue.find({})
     // Render index page when they're found
     .then((issue) => {
-        console.log(issue)
-        res.render('issues/index.liquid', {issues})
+        res.render('issues/index.liquid', {issue})
     })
     .catch((error) => {
         console.log(error)
