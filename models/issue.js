@@ -8,7 +8,8 @@ const issuesSchema = new Schema({
     publishedAt: {type: Date, default: Date.now},
     content:{type: String},
     author: {type: String},
-    urlToImage: {type: String}
+    urlToImage: {type: String},
+    issue: String
 })
 
 const Issue = model('Issue', issuesSchema)
