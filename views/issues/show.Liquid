@@ -1,5 +1,7 @@
 {%layout 'layout.liquid'%} {%block content%}
+<div class="container">
 {%for articleIssue in data%}
-{{articleIssue}}
+<a href="" class="article-issues-image"><img src="{{articleIssue.urlToImage}}" alt=""></a>
 {%endfor%}
+</div>
 {%endblock%}

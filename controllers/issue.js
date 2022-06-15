@@ -26,5 +26,13 @@ router.get('/:issue', (req, res) => {
     })
 })
 
+// Post
+
+// Put
+
+// Edit
+
+// Delete
+
 module.exports = router
 
