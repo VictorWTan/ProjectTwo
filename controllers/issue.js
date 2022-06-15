@@ -1,5 +1,4 @@
 const express = require('express')
-const { find } = require('../models/issue')
 const Issue = require('../models/issue')
 const router = express.Router()
 
@@ -20,11 +19,10 @@ router.get('/', (req, res) => {
     })
 })
 
-// Show page for each issue/article
-
-router.get('/:issueId', async (req, res) => {
-    const issueId = await Issue.find({'issues': `${req.params.issueId}`})
-    
+router.get('/:issue', (req, res) => {
+    Issue.find({'issue': `${req.params.issue}`}).then((data) => {
+        res.render('issues/show.liquid', {data})
+    })
 })
 
 module.exports = router
