@@ -19,6 +19,7 @@ router.get('/', (req, res) => {
     })
 })
 
+// Show page
 router.get('/:issue', (req, res) => {
     Issue.find({'issue': `${req.params.issue}`}).then((data) => {
         res.render('issues/show.liquid', {data})
