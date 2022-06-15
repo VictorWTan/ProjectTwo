@@ -1,6 +1,6 @@
 {%layout 'layout.liquid'%}{% block content%}
 <header>
-    <aside>
+    <aside class="list-container">
         <h1>Issues</h1>
         <ul>
             {%for issue in data%}
@@ -8,5 +8,7 @@
             {%endfor%}
         </ul>
     </aside>
+    <div class="suggested-articles">
+    </div>
 </header>
 {%endblock%} 

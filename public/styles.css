@@ -41,6 +41,7 @@
 
 .published-at{
     color: #2e00b0;
+    text-align:center;
 }
 
 .header-block{
@@ -56,4 +57,28 @@
 .header-link:hover{
     text-decoration: none;
     color: #333333;
+}
+
+.site-header{
+    padding: 0px 30px;
+}
+
+.issue-id-header{
+    padding:30px 140px;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    line-height:1.2em;
+    word-spacing: .2em;
+    font-size: 30px;
+}
+
+span {
+    display: block;
+}
+
+.author {
+    margin: 0px 20px;
 }

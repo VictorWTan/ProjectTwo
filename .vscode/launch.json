@@ -7,11 +7,20 @@
         {
             "type": "pwa-node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "seed.js",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/models/seed.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "server.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/server.js"
         }
     ]
 }
