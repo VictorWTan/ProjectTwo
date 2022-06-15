@@ -3,8 +3,9 @@
     <aside>
         <h1>Issues</h1>
         <ul>
-            <li><a href="Issue">Children and Family</a></li>
-            <li>Climate</li>
+            {%for issue in data%}
+            <li><a href="/issues/{{}}">{{issue}}</a></li>
+            {%endfor%}
         </ul>
     </aside>
 </header>
