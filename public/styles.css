@@ -1,3 +1,59 @@
 * {
-background-color: red;
+    margin-top: 0;
+    font-family: 'Joan', serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.container::before{
+    display: none;
+}
+
+.image-wrapper {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+}
+
+.article-issues-image {
+    width: 100%;
+    height: auto;
+}
+
+.img {
+    width: 100%;
+}
+
+.article-title {
+    padding: 5px 0px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.issue-header{
+    text-align: center;
+    padding: 3em;
+    margin: 50px 0px;
+}
+
+.published-at{
+    color: #2e00b0;
+}
+
+.header-block{
+    background-color:#3e2f7f;
+    width: 100%;
+    height: 8rem;
+    margin:30px 0px 0px 0px;
+}
+
+.header-link {
+    color: #333333;
+}
+.header-link:hover{
+    text-decoration: none;
+    color: #333333;
 }

@@ -1,7 +1,21 @@
 {%layout 'layout.liquid'%} {%block content%}
+<div class="header-block"></div>
+<div class="issue-header">
+    <h1>{{data[0].issue}}</h1>
+    The latest articles from CNN on {{data[0].issue}}
+</div>
 <div class="container">
 {%for articleIssue in data%}
-<a href="" class="article-issues-image"><img src="{{articleIssue.urlToImage}}" alt=""></a>
+
+<div class="image-wrapper">
+    <a href="" class="article-issues-image"><img class="img"src="{{articleIssue.urlToImage}}" alt=""></a>
+    <div class="article-title">
+        {{articleIssue.title}}
+    </div>
+    <div class="published-at">
+        {{articleIssue.publishedAt | date: "%a, %b, %d, %y"}}
+    </div>
+</div>
 {%endfor%}
 </div>
 {%endblock%}
