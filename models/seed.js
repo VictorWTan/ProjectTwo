@@ -50,12 +50,49 @@ const addClimate = () => {
     })
 }
 
+const addCovid = () => {
+    newsapi.v2.everything({
+        sources: 'cnn',
+        q: 'coronavirus',
+        language: 'en',
+    })
+    .then((res) => {
+        let covidArticles = res.articles
+        let taggedCovidArticles = covidArticles.map((article) => {
+            article.issue = 'Coronavirus'
+            return article
+        })
+        Issue.insertMany(taggedCovidArticles).then((data) => {
+            console.log(data)
+        })
+    })
+}
+
+const addImmigration= () => {
+    newsapi.v2.everything({
+        sources: 'cnn',
+        q: 'immigration',
+        language: 'en',
+    })
+    .then((res) => {
+        let immigrationArticles = res.articles
+        let taggedImmigrationArticles = immigrationArticles.map((article) => {
+            article.issue = 'Immigration'
+            return article
+        })
+        Issue.insertMany(taggedImmigrationArticles).then((data) => {
+            console.log(data)
+        })
+    })
+}
 
 
 // On open, add all the articles to the database
 db.on("open", () => {
     addBabyFormula()
     addClimate()
+    addCovid()
+    addImmigration()
 })
 
 
