@@ -11,7 +11,7 @@ const Issue = require('./models/issue')
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-app.use(express.static(__dirname))
+app.use(express.static('public'))
 app.use(session({
     secret: process.env.SECRET,
     store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
@@ -25,7 +25,7 @@ app.use('/user', UserRouter)
 
 app.get('/', (req, res) => {
   Issue.find({}).then((data) => {
-    res.render('index')
+    res.render('index.Liquid', {data})
   })
   .catch((error) => {
     console.log(error)
