@@ -86,13 +86,18 @@ const addImmigration= () => {
     })
 }
 
-
-// On open, add all the articles to the database
-db.on("open", () => {
+const runData = () => {
     addBabyFormula()
     addClimate()
     addCovid()
     addImmigration()
+}
+
+
+// On open, add all the articles to the database
+db.on("open", async() => {
+    let dataRun = await runData()
+    console.log(dataRun)
 })
 
 
