@@ -9,6 +9,7 @@ const session = require('express-session')
 const NewsAPI = require('newsapi')
 const Issue = require('./models/issue')
 
+app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(express.static(__dirname))
 app.use(session({
@@ -23,8 +24,7 @@ app.use('/issues', IssueRouter)
 app.use('/user', UserRouter)
 
 app.get('/', (req, res) => {
-  Issue.find({})
-  .then((data) => {
+  Issue.find({}).then((data) => {
     res.render('index.liquid')
   })
   .catch((error) => {
