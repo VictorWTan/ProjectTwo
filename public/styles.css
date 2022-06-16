@@ -85,3 +85,48 @@ span {
 .author {
     margin: 0px 20px;
 }
+
+fieldset{
+    padding: 20px;
+    margin: 20px 0px;
+    text-align: center;
+}
+
+legend{
+    padding: 0px 10px;
+    text-indent: -400px;
+}
+
+textarea{
+    height: 75px;
+    width: 300px;
+    max-width: 500px;
+    max-height: 150px;
+    
+}
+
+label{
+    text-indent: -400px;
+}
+
+.list-container h1 {
+    font-size: 50px;
+}
+
+.list-container li {
+    padding: 20px 0px;
+    font-size: 24px;
+}
+
+.list-container a{
+    color:#2e00b0;
+}
+
+.list-container a:hover{
+    text-decoration: none;
+}
+
+.list-container{
+    padding: 20px;
+}
+

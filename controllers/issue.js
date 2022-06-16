@@ -15,6 +15,7 @@ router.use((req, res, next) => {
 
 router.get('/', (req, res) => {
     Issue.distinct('issue').then((data) => {
+        console.log(data)
         res.render('issues/index.liquid', {data})
     })
 })

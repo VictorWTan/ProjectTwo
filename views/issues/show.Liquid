@@ -22,6 +22,10 @@
 <fieldset class="comment-section">
     <legend>Comments</legend>
     <label for="add-comment">Add a comment</label>
+    <br>
     <textarea id="add-comment" placeholder="Your comment here"></textarea>
+    <form action="/issues/{{data[0].issue}}" method="post">
+        <input type="submit" value="Submit">
+    </form>
 </fieldset>
 {%endblock%}
