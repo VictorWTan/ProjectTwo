@@ -5,17 +5,23 @@
     The latest articles from CNN on {{data[0].issue}}
 </div>
 <div class="grid-container">
-{%for articleIssue in data%}
+    {%for articleIssue in data%}
 
-<div class="image-wrapper">
-    <a href="{{articleIssue.url}}" class="article-issues-image"><img class="img"src="{{articleIssue.urlToImage}}" alt=""></a>
-    <div class="article-title">
-        {{articleIssue.title}}
+    <div class="image-wrapper">
+        <a href="{{articleIssue.url}}" class="article-issues-image"><img class="img" src="{{articleIssue.urlToImage}}"
+                alt=""></a>
+        <div class="article-title">
+            {{articleIssue.title}}
+        </div>
+        <div class="published-at">
+            {{articleIssue.publishedAt | date: "%a, %b, %d, %y"}}
+        </div>
     </div>
-    <div class="published-at">
-        {{articleIssue.publishedAt | date: "%a, %b, %d, %y"}}
-    </div>
+    {%endfor%}
 </div>
-{%endfor%}
-</div>
+<fieldset class="comment-section">
+    <legend>Comments</legend>
+    <label for="add-comment">Add a comment</label>
+    <textarea id="add-comment" placeholder="Your comment here"></textarea>
+</fieldset>
 {%endblock%}
