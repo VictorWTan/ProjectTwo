@@ -3,12 +3,14 @@
     font-family: 'Joan', serif;
 }
 
-.container {
+.grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    column-gap:2em;
+    margin:0em 2em;
 }
 
-.container::before{
+.grid-container::before{
     display: none;
 }
 
