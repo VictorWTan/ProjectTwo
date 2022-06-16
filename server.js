@@ -6,7 +6,6 @@ const MongoStore = require('connect-mongo')
 const IssueRouter = require('./controllers/issue')
 const UserRouter = require('./controllers/user')
 const session = require('express-session')
-const NewsAPI = require('newsapi')
 const Issue = require('./models/issue')
 
 app.use(express.json())
