@@ -26,6 +26,12 @@ On entry to the website, the user is greeted with a login/signup page that they 
 
 ![Wireframe](assets/ReadMe/Wireframe.png)
 
+<h1><strong>Example Code</strong></h1>
+
+An example of code that took me a long time to figure out was mapping out the array that my article query returned so that I had an issues tag attached to each article I queried.
+
+![Example Code](assets/ReadMe/ImmigrationCode.png)
+
 <h1><strong>Resources Used</strong></h1>
 
 https://newsapi.org/ - News Api locates articles and news headlines from news sources and blogs and renders the information in JSON format.
