@@ -25,7 +25,10 @@ router.get('/', (req, res) => {
 // Show page
 router.get('/:issue', (req, res) => {
     Issue.find({'issue': `${req.params.issue}`}).then((data) => {
-        res.render('issues/show.liquid', {data})
+        Comment.find({'issue': `${req.params.issue}`}).then((comment) => {
+            res.render('issues/show.liquid', {data, comment})
+            console.log(comment)
+        })
     })
 })
 
@@ -63,8 +66,23 @@ router.post('/:issue', (req, res) => {
 
 
 // Put
+router.put('/:issue', (req, res) => {
+    let issue = req.params.issue
+    let {commentId, comment} = req.body
+    Comment.findByIdAndUpdate({_id: commentId}, {comments: comment}, {new: true}).then((data) => {
+        res.redirect(`/issues/${issue}`)
+    })
+})
 
 // Edit
+
+router.get('/:issue/edit/:id', (req, res) => {
+    let issue = req.params.issue
+    let id = req.params.id
+    Comment.findById(id).then((comment) => {
+        res.render('issues/edit.liquid', {comment})
+    })
+})
 
 // Delete
 

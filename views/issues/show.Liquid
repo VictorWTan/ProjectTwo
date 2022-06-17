@@ -28,7 +28,25 @@
         <input type="submit" value="Submit">
     </fieldset>
 </form>
-
-<div class="comments">
+<div class="big-container">
+    <div class="comment-container">
+        {%for comments in comment reversed%}
+        <div class="update-delete">
+            
+            <form action="/issues/{{data[0].issue}}/edit/{{comments._id}}">
+                <input type="submit" value="Update">
+            </form>
+            
+            <form action="/issues/{{data[0].issue}}"?_method=DELETE name="delete" method="POST">
+                <input type="submit" value="Delete">
+            </form>
+        </div>
+        <div class="comments">
+            {{comments.username}}
+            <br>
+            {{comments.body}}
+        </div>
+        {%endfor%}
+    </div>
 </div>
 {%endblock%}

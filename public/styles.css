@@ -126,4 +126,20 @@ textarea{
     padding: 20px;
 }
 
+.comment-container{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+}
+
+.big-container{
+    display: flex;
+    justify-content: center;
+
+}
+
+.comments{
+    padding: 40px 0px;
+    border-bottom:1px solid black;
+}
 

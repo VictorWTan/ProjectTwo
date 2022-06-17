@@ -1,0 +1,6 @@
+{%layout 'layout.liquid'%}{%block content%}
+<form action="/issues/{{data[0].issue}}"?_method=PUT name="update method="POST">
+    <textarea name="update" id="update-comment" placeholder="Edit Comment"></textarea>
+    <input type="submit" value="Update">
+</form>
+{%endblock%}
