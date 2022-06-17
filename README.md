@@ -1,3 +1,8 @@
+<h1><strong>Deployment Link</strong></h1>
+
+https://dataforprogress.herokuapp.com/ **UNDER CONSTRUCTION**
+
+
 <h1><strong>Project Inspiration</strong></h1>
 
 My project is a replica of a site called DataForProgress. The website is a progressive run blog site that displays data to support progressive causes. They create charts using data from their api provider or polling regarding any political or social issue to back progressive movements. Here is an example of a show page for an issue. 
