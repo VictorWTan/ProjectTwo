@@ -24,7 +24,7 @@ app.use('/user', UserRouter)
 
 app.get('/', (req, res) => {
   Issue.find({}).then((data) => {
-    res.render('index.Liquid', {data})
+    res.render('index')
   })
   .catch((error) => {
     console.log(error)
