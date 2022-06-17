@@ -7,6 +7,16 @@
         {
             "type": "pwa-node",
             "request": "launch",
+            "name": "issue.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/controllers/issue.js"
+        },
+
+        {
+            "type": "pwa-node",
+            "request": "launch",
             "name": "seed.js",
             "skipFiles": [
                 "<node_internals>/**"

@@ -19,16 +19,16 @@
     </div>
     {%endfor%}
 </div>
-<fieldset class="comment-section">
-    <legend>Comments</legend>
-    <label for="add-comment">Add a comment</label>
-    <br>
-    <textarea id="add-comment" placeholder="Your comment here"></textarea>
-    <form action="/issues/{{data[0].issue}}" method="post">
+<form action="/issues/{{data[0].issue}}" method="post">
+    <fieldset class="comment-section">
+        <legend>Comments</legend>
+        <label for="add-comment">Add a comment</label>
+        <br>
+        <textarea id="add-comment" name="comment" placeholder="Your comment here"></textarea>
         <input type="submit" value="Submit">
-    </form>
-</fieldset>
+    </fieldset>
+</form>
+
 <div class="comments">
-    {{data[0].comments}}
 </div>
 {%endblock%}

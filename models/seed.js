@@ -20,6 +20,7 @@ const addBabyFormula = () => {
     // Mapping all of the articles to a new array with an issue property added
     let taggedFormulaArticles = babyFormulaArticles.map((article) => {
         article.issue = 'Children and Family'
+        article.comments = []
         return article
     })
     // Prep the database by clearing the data
@@ -42,6 +43,7 @@ const addClimate = () => {
         let climateChangeArticles = res.articles
         let taggedClimateArticles = climateChangeArticles.map((article) => {
             article.issue = 'Climate Change'
+            article.comments = []
             return article
         })
         Issue.insertMany(taggedClimateArticles).then((data) => {
@@ -60,6 +62,7 @@ const addCovid = () => {
         let covidArticles = res.articles
         let taggedCovidArticles = covidArticles.map((article) => {
             article.issue = 'Coronavirus'
+            article.comments = []
             return article
         })
         Issue.insertMany(taggedCovidArticles).then((data) => {
@@ -69,15 +72,19 @@ const addCovid = () => {
 }
 
 const addImmigration= () => {
+    // Query for all the articles related to immigration from CNN
     newsapi.v2.everything({
         sources: 'cnn',
         q: 'immigration',
         language: 'en',
     })
     .then((res) => {
+        // Then sets the array of articles to a variable
         let immigrationArticles = res.articles
+        // Map all the variables to a new array with new issue and comments field and value
         let taggedImmigrationArticles = immigrationArticles.map((article) => {
             article.issue = 'Immigration'
+            article.comments = []
             return article
         })
         Issue.insertMany(taggedImmigrationArticles).then((data) => {
@@ -86,18 +93,21 @@ const addImmigration= () => {
     })
 }
 
-const runData = () => {
-    addBabyFormula()
-    addClimate()
-    addCovid()
-    addImmigration()
+
+const makeQuery = (runData)=>{
+    return new Promise((resolve, reject) => {
+        resolve(runData())
+    }) 
 }
+
 
 
 // On open, add all the articles to the database
 db.on("open", async() => {
-    let dataRun = await runData()
-    console.log(dataRun)
+    await makeQuery(addBabyFormula)
+    await makeQuery(addClimate)
+    await makeQuery(addCovid)
+    await makeQuery(addImmigration)
 })
 
 
