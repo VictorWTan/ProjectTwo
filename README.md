@@ -14,6 +14,10 @@ For the project, I plan to establish an index page with a list of individual iss
 
 Minimum viable product will consist of a website with an index page, show pages, login, comments, editing comments, and deleting comments. Stretch goal is including admin privileges or journalist privileges. 
 
+<h1><strong>User Experience</strong></h1>
+
+On entry to the website, the user is greeted with a login/signup page that they must use before entering the site. Once logged in, the site populates a list using the NewsAPI to generate a list of topics. Upon clicking on a link in the list, they're sent to a show page with a block of 20 articles relevant to the topic clicked. At the bottom of the page, the user can read other people's comments, as well as creating, updating, and deleting their own. 
+
 <h1><strong>ERD</strong></h1>
 
 ![ERD](assets/ReadMe/ERD.jpeg)
@@ -24,5 +28,5 @@ Minimum viable product will consist of a website with an index page, show pages,
 
 <h1><strong>Resources Used</strong></h1>
 
-The public API which I will be using is sourced from opensecrets.org. It's a website run by an independent, non-profit, and non-partisan research group which provides public information on the flow of money in American politics.
+https://newsapi.org/ - News Api locates articles and news headlines from news sources and blogs and renders the information in JSON format.
 
