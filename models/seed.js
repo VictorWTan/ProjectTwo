@@ -2,8 +2,18 @@ const mongoose = require('./connection')
 const Issue = require('./issue')
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('1372cfdb6df94089bdb9ceb7f8b5ae9c');
+const Comment = require('./comment')
 
 const db = mongoose.connection
+
+const clearComments = () => {
+    Comment.deleteMany({}).then((data) => {
+        console.log(data)
+    })
+    .catch((error) => {
+        res.json({error})
+    })
+}
 
 // Create a function that adds the articles
 const addBabyFormula = () => {
@@ -104,6 +114,7 @@ const makeQuery = (runData)=>{
 
 // On open, add all the articles to the database
 db.on("open", async() => {
+    await makeQuery(clearComments)
     await makeQuery(addBabyFormula)
     await makeQuery(addClimate)
     await makeQuery(addCovid)

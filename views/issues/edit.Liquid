@@ -1,6 +1,9 @@
 {%layout 'layout.liquid'%}{%block content%}
-<form action="/issues/{{data[0].issue}}?_method=PUT" name="update" method="POST">
-    <textarea name="_method" id="update-comment" placeholder="Edit Comment"></textarea>
-    <input type="submit" value="Update">
-</form>
+<div class="header-block"></div>
+<div class="edit-block">
+    <form action="/issues/{{issue}}/edit/{{id}}?_method=PUT" method="POST">
+        <textarea name="body" id="update-comment" placeholder="Edit Comment"></textarea>
+        <input type="submit" value="Update">
+    </form>
+</div>
 {%endblock%}

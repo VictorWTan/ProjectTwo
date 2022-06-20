@@ -157,3 +157,11 @@ textarea{
     text-align: center;
     padding: 30px;
 }
+
+.hidden-id{
+    display: none;
+}
+
+.edit-block{
+    padding: 30px;
+}

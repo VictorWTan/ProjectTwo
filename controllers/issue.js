@@ -22,18 +22,6 @@ router.get('/', (req, res) => {
     })
 })
 
-// Show page
-router.get('/:issue', (req, res) => {
-    Issue.find({'issue': `${req.params.issue}`}).then((data) => {
-        Comment.find({'issue': `${req.params.issue}`}).then((comment) => {
-            res.render('issues/show.liquid', {data, comment})
-            console.log(comment)
-        })
-    })
-})
-
-// Post
-
 // Post route to post to the current page
 router.post('/:issue', (req, res) => {
     let issue = req.params.issue
@@ -64,27 +52,42 @@ router.post('/:issue', (req, res) => {
     })
 })
 
-
-// Put
-router.put('/:issue', (req, res) => {
-    let issue = req.params.issue
-    let {commentId, comment} = req.body
-    Comment.findByIdAndUpdate({_id: commentId}, {comments: comment}, {new: true}).then((data) => {
-        res.redirect(`/issues/${issue}`)
-    })
-})
-
 // Edit
 
 router.get('/:issue/edit/:id', (req, res) => {
     let issue = req.params.issue
     let id = req.params.id
     Comment.findById(id).then((comment) => {
-        res.render('issues/edit.liquid', {comment})
+        res.render('issues/edit.liquid', {issue, comment, id})
+    })
+})
+
+// Show page
+router.get('/:issue', (req, res) => {
+    Issue.find({'issue': `${req.params.issue}`}).then((data) => {
+        Comment.find({'issue': `${req.params.issue}`}).then((comment) => {
+            res.render('issues/show.liquid', {data, comment})
+        })
+    })
+})
+
+// Put
+router.put('/:issue/edit/:id', (req, res) => {
+    let issue = req.params.issue
+    let id = req.params.id
+    Comment.updateOne({_id: id}, {$set: {body: req.body.body}}).then((comment) => {
+        res.redirect(`/issues/${issue}`)
     })
 })
 
 // Delete
+
+router.delete('/:issue', (req, res) => {
+    Comment.deleteOne({_id: req.body.deleteId}).then((comment) => {
+        res.redirect(`/issues/${req.params.issue}`)
+    })
+})
+
 
 module.exports = router
 
